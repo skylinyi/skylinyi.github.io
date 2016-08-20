@@ -454,13 +454,18 @@ RainLike现就职于深圳洪彩技术有限公司（任职：主美）。
     <div id="comment-box" ></div>
     <div class="ds-thread" id="ds-thread" data-thread-key="about/index.html" data-title="关于RainLike_Space &amp; 留言板" data-url="http://skylinyi.github.io/about/index.html"></div>
     <script>
-        var duoshuoQuery = {short_name:"skylinyi"};
-        var loadComment = function(){
-            var d = document, s = d.createElement('script');
-            s.src = 'http://skylinyi.github.io/js/embed.js';
-            s.async = true; s.charset = 'UTF-8';
-            (d.head || d.body).appendChild(s);
-        }
+       var duoshuoQuery = {short_name:"[object Object]"};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+
+    ds.src = 'http://moxfive.xyz/resources/embed.js';
+    /*上面是我自己的 embed.js 链接，请改为你自己的地址*/
+
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
 
         
     </script>
