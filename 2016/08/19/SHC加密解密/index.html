@@ -323,8 +323,8 @@ SHC是一个脚本编译程序，使用RC4加密代码加密shell， 并把shell
       
     
     <div class="article-entry" itemprop="articleBody">
-      
-          
+    
+        
         <h1 id="SHC说明："><a href="#SHC说明：" class="headerlink" title="SHC说明："></a>SHC说明：</h1><p>SHC是一个用于加密linux脚本的软件。对普通用户来说可以提高安全性。<br>如果我们写的shell脚本里有敏感信息，或者不愿意让人看到和修改shell代码，就可以使用shell加密。</p>
 <p>SHC是一个脚本编译程序，使用RC4加密代码加密shell， 并把shell程序转换为二进制可执行文件（支持动态链接和静态链接）</p>
 <a id="more"></a>
@@ -342,8 +342,8 @@ SHC是一个脚本编译程序，使用RC4加密代码加密shell， 并把shell
 <h3 id="执行脚本并中断"><a href="#执行脚本并中断" class="headerlink" title="执行脚本并中断"></a>执行脚本并中断</h3><h3 id="脚本二进制文件名定为-abc"><a href="#脚本二进制文件名定为-abc" class="headerlink" title="脚本二进制文件名定为 abc"></a>脚本二进制文件名定为 abc</h3><p><pre><code><br>./abc (sleep 0.2 &amp;&amp; kill -SIGSEGV $!)<br></code></pre></p>
 <h3 id="输出脚本执行信息和脚本代码到文件"><a href="#输出脚本执行信息和脚本代码到文件" class="headerlink" title="输出脚本执行信息和脚本代码到文件"></a>输出脚本执行信息和脚本代码到文件</h3><p><pre><code><br>cd /core_dump<br>cat ./core.<strong><em>.*</em></strong> | strings &gt; ~/abc.sh<br></code></pre><br><strong><em>.</em></strong>是你执行代码后的随机值（对应的PID等）<br>现在去对abc.sh文件进行一些多余文本的删除就得到解密后的脚本了。</p>
 
-      
-    </div>
+    
+</div>
     
   </div>
   
