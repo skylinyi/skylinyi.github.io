@@ -4,17 +4,24 @@
   
     
     <entry>
+      <title><![CDATA[诗]]></title>
+      <url>http://skylinyi.github.io/2016/08/25/%E8%AF%97/</url>
+      <content type="html"><![CDATA[<h3 id="闻君有他心，拉杂摧烧之。"><a href="#闻君有他心，拉杂摧烧之。" class="headerlink" title="闻君有他心，拉杂摧烧之。"></a>闻君有他心，拉杂摧烧之。</h3><h3 id="摧烧之，当风扬其灰！"><a href="#摧烧之，当风扬其灰！" class="headerlink" title="摧烧之，当风扬其灰！"></a>摧烧之，当风扬其灰！</h3><h3 id="从今以往，勿复相思，相思与君绝！"><a href="#从今以往，勿复相思，相思与君绝！" class="headerlink" title="从今以往，勿复相思，相思与君绝！"></a>从今以往，勿复相思，相思与君绝！</h3><h2 id="——汉《有所思》"><a href="#——汉《有所思》" class="headerlink" title="——汉《有所思》"></a>——汉《有所思》</h2>]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[gzexe加密与解密]]></title>
       <url>http://skylinyi.github.io/2016/08/24/gzexe%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86/</url>
-      <content type="html"><![CDATA[<h1 id="gzexe加密与解密shell脚本"><a href="#gzexe加密与解密shell脚本" class="headerlink" title="gzexe加密与解密shell脚本"></a>gzexe加密与解密shell脚本</h1><p>我们写的shell脚本里面通常会包含帐号密码等信息或者你不想让别人看到的信息，那么把写好的shell脚本进行简单的加密显得有些必要了。</p>
+      <content type="html"><![CDATA[<h2 id="gzexe加密与解密shell脚本"><a href="#gzexe加密与解密shell脚本" class="headerlink" title="gzexe加密与解密shell脚本"></a>gzexe加密与解密shell脚本</h2><p>我们写的shell脚本里面通常会包含帐号密码等信息或者你不想让别人看到的信息，那么把写好的shell脚本进行简单的加密显得有些必要了。</p>
 <p>常用的shell加密方法有两种，一种是通过gzexe加密，另一种是通过shc加密。</p>
 <p>我们先给一个简单的脚本，然后用它来进行加密解密演示，脚本abc.sh内容如下</p>
+<a id="more"></a>
 <pre><code>
 #!/bin/bash
 echo "hello world!"
 </code></pre>
-## 加密
-<pre><code>
+
+<h3 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h3><pre><code>
 shell > bash abc.sh         # 执行后显示内容
 hello world!
 shell > gzexe abc.sh         # 压缩

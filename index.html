@@ -279,6 +279,74 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-诗" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/25/诗/" class="article-date">
+      <time datetime="2016-08-25T07:18:05.000Z" itemprop="datePublished">2016-08-25</time>
+</a>
+
+ 
+    <a href="/2016/08/25/诗/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count"  data-thread-key="2016/08/25/诗/" ></span>
+        
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/25/诗/">诗</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+    
+        
+        <h3 id="闻君有他心，拉杂摧烧之。"><a href="#闻君有他心，拉杂摧烧之。" class="headerlink" title="闻君有他心，拉杂摧烧之。"></a>闻君有他心，拉杂摧烧之。</h3><h3 id="摧烧之，当风扬其灰！"><a href="#摧烧之，当风扬其灰！" class="headerlink" title="摧烧之，当风扬其灰！"></a>摧烧之，当风扬其灰！</h3><h3 id="从今以往，勿复相思，相思与君绝！"><a href="#从今以往，勿复相思，相思与君绝！" class="headerlink" title="从今以往，勿复相思，相思与君绝！"></a>从今以往，勿复相思，相思与君绝！</h3><h2 id="——汉《有所思》"><a href="#——汉《有所思》" class="headerlink" title="——汉《有所思》"></a>——汉《有所思》</h2>
+    
+</div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-gzexe加密与解密" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -316,43 +384,9 @@
     
     <div class="article-entry" itemprop="articleBody">
     
-        
-        <h1 id="gzexe加密与解密shell脚本"><a href="#gzexe加密与解密shell脚本" class="headerlink" title="gzexe加密与解密shell脚本"></a>gzexe加密与解密shell脚本</h1><p>我们写的shell脚本里面通常会包含帐号密码等信息或者你不想让别人看到的信息，那么把写好的shell脚本进行简单的加密显得有些必要了。</p>
+        <h2 id="gzexe加密与解密shell脚本"><a href="#gzexe加密与解密shell脚本" class="headerlink" title="gzexe加密与解密shell脚本"></a>gzexe加密与解密shell脚本</h2><p>我们写的shell脚本里面通常会包含帐号密码等信息或者你不想让别人看到的信息，那么把写好的shell脚本进行简单的加密显得有些必要了。</p>
 <p>常用的shell加密方法有两种，一种是通过gzexe加密，另一种是通过shc加密。</p>
 <p>我们先给一个简单的脚本，然后用它来进行加密解密演示，脚本abc.sh内容如下</p>
-<pre><code>
-#!/bin/bash
-echo "hello world!"
-</code></pre>
-## 加密
-<pre><code>
-shell > bash abc.sh         # 执行后显示内容
-hello world!
-shell > gzexe abc.sh         # 压缩
-abc.sh:  18.8%
-shell > ls -l                # 压缩完成后， abc.sh~ 是原文件 ， abc.sh 是压缩后的二进制文件
-abc.sh
-abc.sh~
-shell > mv abc.sh abc
-shell > sh abc             # 压缩后再执行正常
-hello world!
-</code></pre>
-
-<p>我们只需要把abc这个二进制文件传到机器上执行就可以了，并不需要关心它的源码，别人也不能通过这个文件看到shell代码，我们cat显示一下这个文件发现内容全部乱码。</p>
-<p>但是通过gzexe加密的shell脚本并不是很安全，细看我们如何通过abc这个乱码的执行文件还原成原来的shell脚本。</p>
-<p>我们看到内容中有一行叫skip=44，这一行非常重要，它告诉我们从第44行起才是原来压缩之前文件的内容，前面都是压缩软件附加上去的内容。虽然从44行往后面也全部都是乱码，我们也读不懂这些内容，但是gzip程序会告诉我们的。</p>
-<p>首先我们把第44行以后的内容过滤出来生成一个.gz结尾文件，然后解压，文件内容就都出来了。</p>
-<pre><code>
-shell > tail -n +44 abc > /tmp/a.gz       # 我们把第44行以后的文件写成一个.gz结尾的压缩文件
-shell > cd /tmp
-shell > gunzip a.gz            # 解压生成的文件
-shell > cat a                  # 解压后的文件和压缩文件同名
-#!/bin/bash
-echo "hello world!"
-</code></pre>
-
-<p>我们看到解压之后，文件里面的内容和原来压缩之前是一样的，成功完成解密。</p>
-
     
 </div>
     
@@ -365,6 +399,10 @@ echo "hello world!"
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术，shell解密/">技术，shell解密</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2016/08/24/gzexe加密与解密/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
